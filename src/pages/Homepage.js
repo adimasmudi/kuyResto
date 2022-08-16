@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 // react bootstrap
-import { Container, Row, Col, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 // components
 import Navbar from "../components/Navbar";
@@ -14,11 +14,28 @@ import homepage from "../json/homepage.json";
 
 export default function Homepage() {
   const [showCart, setShowCart] = useState(false);
-  const [category, setCategory] = useState("");
+  const [category, setCategory] = useState("semua");
+  const [displayBySearch, setDisplayBySearch] = useState("");
 
+  const [homepageData, setHomepageData] = useState(homepage);
+  let data;
   useEffect(() => {
-    return;
-  }, [showCart, category]);
+    if (category !== "semua") {
+      data = homepage.products.filter((data) => data.category === category);
+    } else {
+      data = homepage.products;
+    }
+    if (displayBySearch !== "") {
+      data = homepage.products.filter((data) => {
+        return (
+          data.name.toLowerCase().includes(displayBySearch.toLowerCase()) ||
+          data.description.toLowerCase().includes(displayBySearch.toLowerCase())
+        );
+      });
+    }
+    setHomepageData(data);
+    console.log(homepageData);
+  }, [showCart, category, displayBySearch]);
 
   const handleCheck = (e) => {
     setCategory(e.target.value);
@@ -33,15 +50,21 @@ export default function Homepage() {
             <Filter handleCheck={handleCheck} />
           </Col>
           <Col xs={10} sm={7} md={7} lg={7}>
-            {category !== "semua"
-              ? homepage.products.map((data) => {
-                  if (data.category === category) {
-                    return <Card data={data} type="card" />;
-                  }
-                })
-              : homepage.products.map((data) => (
-                  <Card data={data} type="card" />
-                ))}
+            <div className="mt-4">
+              <Row>
+                <Col>
+                  <Form.Control
+                    size="sm"
+                    type="text"
+                    placeholder="cari makanan"
+                    onChange={(e) => setDisplayBySearch(e.target.value)}
+                  />
+                </Col>
+              </Row>
+            </div>
+            {homepageData.map((data) => (
+              <Card data={data} type="card" />
+            ))}
           </Col>
           <Col
             xs={2}
