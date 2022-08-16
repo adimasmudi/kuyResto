@@ -53,7 +53,7 @@ export default function Login() {
                 style={{ marginBottom: "1rem" }}
               >
                 <img
-                  src="/KuyResto.png"
+                  src="/images/KuyResto.png"
                   style={{
                     width: `2rem`,
                     display: "inline",
