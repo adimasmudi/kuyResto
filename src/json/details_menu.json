@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "name": "bakso beranak",
+  "category": "makanan",
+  "description": "Makanan yang sangat enak disantap di waktu dingin bersama orang tersayang",
+  "price": 20000,
+  "discount": 5000,
+  "qty": 4,
+  "image": "/images/bakso_beranak.jpg",
+  "komposisi": ["daging", "tepung", "saus", "kecap", "ragi"]
+}

@@ -1,24 +1,27 @@
 {
   "products": [
     {
+      "id": 1,
       "name": "bakso beranak",
       "category": "makanan",
       "description": "Makanan yang sangat enak disantap di waktu dingin bersama orang tersayang",
       "price": 20000,
       "discount": 5000,
-      "qty": 0,
+      "qty": 4,
       "image": "/images/bakso_beranak.jpg"
     },
     {
+      "id": 2,
       "name": "Ayam Geprek",
       "category": "makanan",
       "description": "Makanan yang sangat enak disantap di waktu dingin bersama orang tersayang",
       "price": 10000,
       "discount": 0,
-      "qty": 5,
+      "qty": 0,
       "image": "/images/ayam_geprek.jpeg"
     },
     {
+      "id": 3,
       "name": "Soto Ayam",
       "category": "makanan",
       "description": "Makanan yang sangat enak disantap di waktu dingin bersama orang tersayang",
@@ -28,6 +31,7 @@
       "image": "/images/soto_ayam.jpg"
     },
     {
+      "id": 4,
       "name": "Joshua",
       "category": "minuman",
       "description": "Minuman menyegarkan yang sangat enak brother",
@@ -37,6 +41,7 @@
       "image": "/images/joshua.jpg"
     },
     {
+      "id": 5,
       "name": "Lemon Tea",
       "category": "minuman",
       "description": "Lemonnya bener-bener terasa",
@@ -46,6 +51,7 @@
       "image": "/images/lemon_tea.jpg"
     },
     {
+      "id": 6,
       "name": "Somay",
       "category": "camilan",
       "description": "wenak tenan",
@@ -57,6 +63,7 @@
   ],
   "cart": [
     {
+      "id": 2,
       "name": "Ayam Geprek",
       "price": 10000,
       "dicsount": 0,
@@ -64,6 +71,7 @@
       "image": "/images/ayam_geprek.jpeg"
     },
     {
+      "id": 5,
       "name": "Lemon Tea",
       "price": 7000,
       "discount": 1000,

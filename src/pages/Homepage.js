@@ -16,8 +16,9 @@ export default function Homepage() {
   const [showCart, setShowCart] = useState(false);
   const [category, setCategory] = useState("semua");
   const [displayBySearch, setDisplayBySearch] = useState("");
+  const [dataOnCart, setDataOnCart] = useState(homepage.cart);
 
-  const [homepageData, setHomepageData] = useState(homepage);
+  const [homepageData, setHomepageData] = useState(homepage.products);
   let data;
   useEffect(() => {
     if (category !== "semua") {
@@ -34,11 +35,36 @@ export default function Homepage() {
       });
     }
     setHomepageData(data);
-    console.log(homepageData);
-  }, [showCart, category, displayBySearch]);
+  }, [showCart, category, displayBySearch, dataOnCart]);
 
   const handleCheck = (e) => {
     setCategory(e.target.value);
+  };
+
+  const cartHandle = (id, addToChart) => {
+    let dataCart;
+
+    if (addToChart) {
+      dataCart = data.filter((dt) => dt.id === id);
+      let isExist = dataOnCart.filter((dt) => dt.id === dataCart[0].id);
+
+      isExist.length === 0 &&
+        setDataOnCart([
+          ...dataOnCart,
+
+          {
+            id: dataCart[0].id,
+            name: dataCart[0].name,
+            price: dataCart[0].price,
+            discount: dataCart[0].discount,
+            qty: dataCart[0].qty,
+            image: dataCart[0].image,
+          },
+        ]);
+    } else {
+      dataCart = dataOnCart.filter((dt) => dt.id !== id);
+      setDataOnCart([...dataCart]);
+    }
   };
 
   return (
@@ -63,7 +89,12 @@ export default function Homepage() {
               </Row>
             </div>
             {homepageData.map((data) => (
-              <Card data={data} type="card" />
+              <Card
+                data={data}
+                type="card"
+                addToChart={true}
+                cartHandle={cartHandle}
+              />
             ))}
           </Col>
           <Col
@@ -88,7 +119,7 @@ export default function Homepage() {
                 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
               </svg>
             </Button>
-            {showCart && <Cart data={homepage.cart} />}
+            {showCart && <Cart data={dataOnCart} cartHandle={cartHandle} />}
           </Col>
         </Row>
       </Container>
