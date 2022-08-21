@@ -1,0 +1,40 @@
+[
+  {
+    "id": 6,
+    "name": "Somay",
+    "category": "camilan",
+    "description": "wenak tenan",
+    "image": "/images/somay.jpg",
+    "status": "Belum diproses"
+  },
+  {
+    "id": 2,
+    "name": "Ayam Geprek",
+    "description": "wenak tenan",
+    "image": "/images/ayam_geprek.jpeg",
+    "status": "Belum diproses"
+  },
+  {
+    "id": 6,
+    "name": "Somay",
+    "category": "camilan",
+    "description": "wenak tenan",
+    "image": "/images/somay.jpg",
+    "status": "Diproses"
+  },
+  {
+    "id": 2,
+    "name": "Ayam Geprek",
+    "description": "wenak tenan",
+    "image": "/images/ayam_geprek.jpeg",
+    "status": "Diproses"
+  },
+  {
+    "id": 6,
+    "name": "Somay",
+    "category": "camilan",
+    "description": "wenak tenan",
+    "image": "/images/somay.jpg",
+    "status": "Selesai"
+  }
+]

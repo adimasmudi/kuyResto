@@ -33,8 +33,8 @@ export default function index() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Transaction</Nav.Link>
-              <Nav.Link href="#link">Notification</Nav.Link>
+              <Nav.Link href="/transaction">Transaction</Nav.Link>
+              <Nav.Link href="/notification">Notification</Nav.Link>
               <Dropdown>
                 <Dropdown.Toggle id="dropdown-basic">
                   <svg

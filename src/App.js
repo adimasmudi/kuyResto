@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import DetailsMenu from "./pages/DetailsMenu";
 import Buy from "./pages/Buy";
+import Transaction from "./pages/Transaction";
 
 function App() {
   const loggedIn = false;
@@ -27,6 +28,7 @@ function App() {
         <Route exact path="/homepage" element={<Homepage />}></Route>
         <Route exact path="/details-menu/:id" element={<DetailsMenu />}></Route>
         <Route exact path="/buy/:id" element={<Buy />}></Route>
+        <Route exact path="/transaction" element={<Transaction />}></Route>
       </Routes>
     </BrowserRouter>
   );
